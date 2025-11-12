@@ -1,6 +1,10 @@
 # Unisphere OTEL
 
-unisphere_otel은 DELL EMC Unity Storage를 모니터링 하기 위한 도구입니다.
+unisphere_otel은 OpenTelemetry를 이용하여 Unisphere REST API로 부터 Dell EMC Unity Storage 장비의 성능 및 정보를 수집합니다.  
+수집된 데이터는 opentelemetry-collector 또는 OpenTelemetry를 지원하는 백엔드에 직접 전송할 수 있습니다.  
+시스템 및 호스트 및 용량 정보의 경우, 각각에 관련된 API에서 데이터를 수집하며,  
+성능 정보의 경우, MetricRealTimeQuery API를 통해 최대 48개의 메트릭 데이터를 요청합니다.
+
 
 
 ## 구조
@@ -35,3 +39,20 @@ unisphere_otel은 DELL EMC Unity Storage를 모니터링 하기 위한 도구입
  - 각 디스크에서의 초당 처리량이 얼마나 됩니까?
 
 ### Fibre Channel
+ - 각 Fibre Channel의 현재 상태는 어떻습니까?
+ - 각 Fibre Channel에서 초당 IO 요청량은 얼마나 됩니까?
+ - 각 Fibre Channel에서 초당 처리량은 얼마나 됩니까?
+
+### iSCSI
+- 각 iSCSI의 현재 상태는 어떻습니까?
+- 각 iSCSI에서 초당 IO 요청량은 얼마나 됩니까?
+- 각 iSCSI에서 초당 처리량은 얼마나 됩니까?
+
+### 호스트
+ - 각 호스트의 현재 상태는 어떻습니까?
+ - 각 호스트의 이니시에이터 상태는 어떻습니까?
+ - 각 호스트와 매핑된 Lun은 무엇입니까?
+
+### LUN
+ - 각 LUN의 현재 상태는 어떻습니까?
+ - 각 LUN의 용량은 얼마나 됩니까?
