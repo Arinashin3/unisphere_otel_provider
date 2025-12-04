@@ -61,7 +61,6 @@ func (_col *Collector) Start(logger *slog.Logger) {
 		logger.Warn("cannot set labels", "error", err)
 	} else {
 		for _, v := range data {
-			v.Get("name").String()
 			_col.detectLabels = append(_col.detectLabels, attribute.String("host.name", v.Get("name").String()))
 		}
 
