@@ -5,6 +5,7 @@ import (
 	"context"
 	"encoding/json"
 	"log/slog"
+	"strings"
 	"unisphere_otel/gounity/api"
 
 	"go.opentelemetry.io/otel/attribute"
@@ -118,6 +119,8 @@ func (_m *ModuleFcPort) Run(logger *slog.Logger, col *Collector) {
 				wwnn = wwn[:23]
 				wwpn = wwn[24:]
 			}
+			wwnn = "0x" + strings.ReplaceAll(wwnn, ":", "")
+			wwpn = "0x" + strings.ReplaceAll(wwpn, ":", "")
 			fcPortAttrs := metric.WithAttributes(
 				attribute.String("fePort", v.Get("id").String()),
 			)

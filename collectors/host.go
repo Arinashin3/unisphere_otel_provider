@@ -5,6 +5,7 @@ import (
 	"context"
 	"encoding/json"
 	"log/slog"
+	"strings"
 	"unisphere_otel/gounity/api"
 
 	"go.opentelemetry.io/otel/attribute"
@@ -158,11 +159,20 @@ func (_m *ModuleHost) Run(logger *slog.Logger, col *Collector) {
 			if v.Get("fcHostInitiators").Exists() {
 				for _, initiator := range v.Get("fcHostInitiators").Array() {
 					initiatorId := initiator.Get("initiatorId").String()
-					wwn := attribute.String("fc.wwn", initiatorId)
-					observer.ObserveFloat64(observableMap["initiator.health"], initiator.Get("health.value").Float(), clientAttrs, targetAttrs, metric.WithAttributes(wwn))
+					var wwnn string
+					var wwpn string
+					if len(initiatorId) > 24 {
+						wwnn = initiatorId[:23]
+						wwpn = initiatorId[24:]
+					}
+					wwnn = "0x" + strings.ReplaceAll(wwnn, ":", "")
+					wwpn = "0x" + strings.ReplaceAll(wwpn, ":", "")
+					attrWwnn := attribute.String("fc.wwnn", wwnn)
+					attrWwpn := attribute.String("fc.wwpn", wwpn)
+					observer.ObserveFloat64(observableMap["initiator.health"], initiator.Get("health.value").Float(), clientAttrs, targetAttrs, metric.WithAttributes(attrWwnn, attrWwpn))
 					for _, p := range initiator.Get("paths").Array() {
 						portId := attribute.String("fePort", p.Get("fcPort.id").String())
-						observer.ObserveFloat64(observableMap["initiator.path"], 1, clientAttrs, targetAttrs, metric.WithAttributes(wwn, portId))
+						observer.ObserveFloat64(observableMap["initiator.path"], 1, clientAttrs, targetAttrs, metric.WithAttributes(attrWwnn, attrWwpn, portId))
 					}
 				}
 			}
