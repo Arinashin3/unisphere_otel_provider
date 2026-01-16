@@ -1,6 +1,6 @@
-# Unisphere_exporter
+# Unisphere OTEL Provider
 
-Unisphere Exporter connects to the Unity console, scrape metric and logs.
+Unisphere OTEL Provider connects to the Unity console, scrape metric and logs.
 and send them to Backends like Prometheus, Loki...
 
 ## Collectors
