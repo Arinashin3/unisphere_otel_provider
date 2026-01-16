@@ -3,9 +3,20 @@
 Unisphere OTEL Provider connects to the Unity console, scrape metric and logs.
 and send them to Backends like Prometheus, Loki...
 
-[Collectors](#Collectors)
 
-## Collectors
+## Index
+
+- [Set up](#Set up)
+- [Collector List](#Collector List)
+
+## Set up
+### Case 1. Send to Backend directly
+
+### Case 2. Use Opentelemetry-Collector Gateway
+
+-------------
+
+## Collector List
 | Collector       | type     | Default Enabled | Description |
 |-----------------|----------|-----------------|-------------|
 | alert           | `log`    |             | |
@@ -27,6 +38,7 @@ and send them to Backends like Prometheus, Loki...
 | Unit        | -                                  |
 | Type        | gauge                              |
 | Labels      | `model` `firmware.version`         |
+| Value       | 1                                  |
 
 ----------------
 
@@ -37,6 +49,7 @@ and send them to Backends like Prometheus, Loki...
 | Unit        | mb                                   |
 | Type        | gauge                                |
 | Labels      | -                                    |
+| Value       | -                                  |
 
 | Metric Name | unisphere_capacity_used_capacity    |
 |-------------|-------------------------------------|
@@ -44,6 +57,7 @@ and send them to Backends like Prometheus, Loki...
 | Unit        | mb                                  |
 | Type        | gauge                               |
 | Labels      | -                                   |
+| Value       | -                                  |
 
 | Metric Name | unisphere_capacity_free_capacity    |
 |-------------|-------------------------------------|
@@ -51,6 +65,7 @@ and send them to Backends like Prometheus, Loki...
 | Unit        | mb                                  |
 | Type        | gauge                               |
 | Labels      | -                                   |
+| Value       | -                                  |
 
 | Metric Name | unisphere_capacity_preallocated_capacity     |
 |-------------|----------------------------------------------|
@@ -58,6 +73,7 @@ and send them to Backends like Prometheus, Loki...
 | Unit        | mb                                           |
 | Type        | gauge                                        |
 | Labels      | -                                            |
+| Value       | -                                  |
 
 | Metric Name | unisphere_capacity_total_provision               |
 |-------------|--------------------------------------------------|
@@ -65,6 +81,59 @@ and send them to Backends like Prometheus, Loki...
 | Unit        | mb                                               |
 | Type        | gauge                                            |
 | Labels      | -                                                |
+| Value       | -                                  |
+
+
+### Disk
+| Metric Name | unisphere_disk_info                              |
+|-------------|--------------------------------------------------|
+| Description | Information of the associated resource           |
+| Unit        | -                                                |
+| Type        | gauge                                            |
+| Labels      | `disk.id`  `slot.id` `disk.model` `disk.part`    |
+| Value       | 1                                                |
+
+| Metric Name | unisphere_disk_health                                                                                                    |
+|-------------|--------------------------------------------------------------------------------------------------------------------------|
+| Description | Health of the associated resource                                                                                        |
+| Unit        | -                                                                                                                        |
+| Type        | gauge                                                                                                                    |
+| Labels      | `disk.id` `slot.id`                                                                                                      |
+| Value       | 0: Unknown<br/>5: OK<br/>7: OK_BUT<br/>10: DEGRADED<br/>15: MINOR<br/>20: MAJOR<br/>25: CRITICAL<br/>30: NON_RECOVERABLE |
+
+| Metric Name | unisphere_disk_size |
+|-------------|---------------------|
+| Description | Usable capacity     |
+| Unit        | mb                  |
+| Type        | gauge               |
+| Labels      | `disk.id` `slot.id` |
+| Value       | -                   |
+
+| Metric Name | unisphere_disk_is_in_use                               |
+|-------------|--------------------------------------------------------|
+| Description | Indicates whether the drive contains user-written data |
+| Unit        | -                                                      |
+| Type        | gauge                                                  |
+| Labels      | `disk.id` `slot.id`                                    |
+| Value       | -                                                      |
+
+
+### DPE
+| Metric Name | unisphere_dpe_health                                                                                                     |
+|-------------|--------------------------------------------------------------------------------------------------------------------------|
+| Description | health about DPE of system                                                                                               |
+| Unit        | -                                                                                                                        |
+| Type        | gauge                                                                                                                    |
+| Labels      | `dpe.id`                                                                                                                 |
+| Value       | 0: Unknown<br/>5: OK<br/>7: OK_BUT<br/>10: DEGRADED<br/>15: MINOR<br/>20: MAJOR<br/>25: CRITICAL<br/>30: NON_RECOVERABLE |
+
+| Metric Name | unisphere_dpe_current_temperature |
+|-------------|-----------------------------------|
+| Description | current temperature of the DPE    |
+| Unit        | -                                 |
+| Type        | gauge                             |
+| Labels      | `dpe.id`                          |
+| Value       | -                                 |
 
 ## Build
 ### Linux
