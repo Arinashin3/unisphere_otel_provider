@@ -5,8 +5,8 @@ import (
 	"encoding/json"
 	"log/slog"
 	"time"
-	"unisphere_otel/gounity/api"
-	"unisphere_otel/utils/enum"
+	"unisphere_otel_provider/gounity/api"
+	"unisphere_otel_provider/utils/enum"
 
 	"github.com/tidwall/gjson"
 	"go.opentelemetry.io/otel/log"

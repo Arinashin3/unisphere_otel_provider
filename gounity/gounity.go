@@ -12,7 +12,7 @@ import (
 	"net/http"
 	"net/http/cookiejar"
 	"time"
-	"unisphere_otel/gounity/api"
+	"unisphere_otel_provider/gounity/api"
 
 	"github.com/tidwall/gjson"
 

@@ -4,8 +4,8 @@ import (
 	"context"
 	"log/slog"
 	"os"
-	"unisphere_otel/collectors"
-	"unisphere_otel/gounity"
+	"unisphere_otel_provider/collectors"
+	"unisphere_otel_provider/gounity"
 
 	"github.com/Arinashin3/otel/config"
 

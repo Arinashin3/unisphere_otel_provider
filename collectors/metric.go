@@ -6,8 +6,8 @@ import (
 	"encoding/json"
 	"log/slog"
 	"strings"
-	"unisphere_otel/gounity/api"
-	"unisphere_otel/utils"
+	"unisphere_otel_provider/gounity/api"
+	"unisphere_otel_provider/utils"
 
 	"github.com/tidwall/gjson"
 	"go.opentelemetry.io/otel/attribute"

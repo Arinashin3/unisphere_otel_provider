@@ -6,7 +6,7 @@ import (
 	"encoding/json"
 	"log/slog"
 	"strings"
-	"unisphere_otel/gounity/api"
+	"unisphere_otel_provider/gounity/api"
 
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/metric"

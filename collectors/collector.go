@@ -5,8 +5,8 @@ import (
 	"errors"
 	"log/slog"
 	"time"
-	"unisphere_otel/gounity"
-	"unisphere_otel/gounity/api"
+	"unisphere_otel_provider/gounity"
+	"unisphere_otel_provider/gounity/api"
 
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/metric"

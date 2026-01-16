@@ -5,8 +5,8 @@ import (
 	"context"
 	"encoding/json"
 	"log/slog"
-	"unisphere_otel/gounity/api"
-	"unisphere_otel/utils"
+	"unisphere_otel_provider/gounity/api"
+	"unisphere_otel_provider/utils"
 
 	"go.opentelemetry.io/otel/metric"
 )
