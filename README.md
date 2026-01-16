@@ -80,8 +80,8 @@ scrape:
 
 ## Metric List
 ### Basic System Info
-> **unisphere_basic_system_info**  
-> Information about unisphere system  
+> Metric Name:: **unisphere_basic_system_info**  
+> Description:: Information about unisphere system  
 > > Unit:: `N/A`  
 > > Type:: `gauge`  
 > > Attributes:: `model` `firmware.version`  
@@ -90,76 +90,100 @@ scrape:
 ----------------
 
 ### Capacity
-> **unisphere_capacity_total_capacity**  
-> Total capacity of unisphere capacity  
+> Metric Name:: **unisphere_capacity_total_capacity**  
+> Description:: Total capacity of unisphere capacity  
 > > Unit:: `mb`  
 > > Type:: `gauge`  
 > > Attributes:: `N/A`  
 > > Value:: `float64`
 
-> **unisphere_capacity_used_capacity**  
-> Used capacity of unisphere capacity
+> Metric Name:: **unisphere_capacity_used_capacity**  
+> Description:: Used capacity of unisphere capacity
 > > Unit:: `mb`  
 > > Type:: `gauge`  
 > > Attributes:: `N/A`  
 > > Value:: `float64`
 
-> **unisphere_capacity_free_capacity**  
-> Free capacity of unisphere capacity
+> Metric Name:: **unisphere_capacity_free_capacity**  
+> Description:: Free capacity of unisphere capacity
 > > Unit:: `mb`  
 > > Type:: `gauge`  
 > > Attributes:: `N/A`  
 > > Value:: `float64`
 
-> **unisphere_capacity_preallocated_capacity**  
-> pre-allocated capacity of unisphere capacity
+> Metric Name:: **unisphere_capacity_preallocated_capacity**  
+> Description:: pre-allocated capacity of unisphere capacity
 > > Unit:: `mb`  
 > > Type:: `gauge`  
 > > Attributes:: `N/A`  
 > > Value:: `float64`
 
-> **unisphere_capacity_total_provision**  
-> Total provisioned capacity of unisphere capacity
+> Metric Name:: **unisphere_capacity_total_provision**  
+> Description:: Total provisioned capacity of unisphere capacity
 > > Unit:: `mb`  
 > > Type:: `gauge`  
 > > Attributes:: `N/A`  
 > > Value:: `float64`
-
+---
 
 ### Disk
-| Metric Name | unisphere_disk_info                              |
-|-------------|--------------------------------------------------|
-| Description | Information of the associated resource           |
-| Unit        | -                                                |
-| Type        | gauge                                            |
-| Labels      | `disk.id`  `slot.id` `disk.model` `disk.part`    |
-| Value       | 1                                                |
+Scrape Disk Health and Size  
+- API: `/api/types/disk/instances`
 
-| Metric Name | unisphere_disk_health                                                                                                    |
-|-------------|--------------------------------------------------------------------------------------------------------------------------|
-| Description | Health of the associated resource                                                                                        |
-| Unit        | -                                                                                                                        |
-| Type        | gauge                                                                                                                    |
-| Labels      | `disk.id` `slot.id`                                                                                                      |
-| Value       | 0: Unknown<br/>5: OK<br/>7: OK_BUT<br/>10: DEGRADED<br/>15: MINOR<br/>20: MAJOR<br/>25: CRITICAL<br/>30: NON_RECOVERABLE |
+#### Configuration Example
 
-| Metric Name | unisphere_disk_size |
-|-------------|---------------------|
-| Description | Usable capacity     |
-| Unit        | mb                  |
-| Type        | gauge               |
-| Labels      | `disk.id` `slot.id` |
-| Value       | -                   |
-
-| Metric Name | unisphere_disk_is_in_use                               |
-|-------------|--------------------------------------------------------|
-| Description | Indicates whether the drive contains user-written data |
-| Unit        | -                                                      |
-| Type        | gauge                                                  |
-| Labels      | `disk.id` `slot.id`                                    |
-| Value       | -                                                      |
+```yaml
+collector:
+  disk:
+    enabled: true
+```
 
 
+#### Metric List
+> Metric Name:: **unisphere_disk_info**  
+> Description:: Information of the associated resource  
+> > Unit:: `N/A`  
+> > Type:: `gauge`  
+> > Attributes:: `disk.id` `slot.id` `disk.model` `disk.part`  
+> > Value:: 1
+
+> Metric Name:: **unisphere_disk_health**  
+> Description:: Health of the associated resource
+> > Unit:: `N/A`  
+> > Type:: `gauge`  
+> > Attributes:: `disk.id` `slot.id`  
+> > Value:: `enum`   
+> 0 = UNKNOWN  
+> 5 = OK  
+> 7 = OK_BUT  
+> 10 = DEGRADED  
+> 15 = MINOR  
+> 20 = MAJOR  
+> 25 = CRITICAL  
+> 30 = NON-RECOVERABLE
+
+> Metric Name:: **unisphere_disk_size**  
+> Description:: Usable capacity  
+> > Unit:: `mb`  
+> > Type:: `gauge`  
+> > Attributes:: `disk.id` `slot.id`  
+> > Value:: `float64`
+
+
+> Metric Name:: **unisphere_disk_is_in_use**  
+> Description:: Indicates whether the drive contains user-written data  
+> > Unit:: `N/A`  
+> > Type:: `gauge`  
+> > Attributes:: `disk.id` `slot.id`  
+> > Value:: `float64`
+
+> Metric Name::
+> Description::
+> > Unit::
+> > Type::
+> > Attributes::
+> > Value::
+---
 ### DPE
 | Metric Name | unisphere_dpe_health                                                                                                     |
 |-------------|--------------------------------------------------------------------------------------------------------------------------|
