@@ -8,13 +8,14 @@ import (
 	"unisphere_otel/gounity"
 
 	"github.com/Arinashin3/otel/config"
+
 	"github.com/Arinashin3/otel/utils"
 	"github.com/alecthomas/kingpin/v2"
 	"github.com/prometheus/common/promslog"
 	promslogflag "github.com/prometheus/common/promslog/flag"
 )
 
-const serviceName = "unisphere_otel"
+const serviceName = "unisphere_otel_provider"
 
 var (
 	configFile = kingpin.Flag("config.file", "Paths to config file.").Short('c').Default("config.yml").String()

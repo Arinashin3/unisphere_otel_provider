@@ -66,7 +66,7 @@ func (_m *ModuleSystemCapacity) Init(key string) {
 		{
 			Key:      "sizePreallocated",
 			Name:     "unisphere_capacity_preallocated_capacity",
-			Desc:     "Total provisioned capacity of unisphere capacity",
+			Desc:     "pre-allocated capacity of unisphere capacity",
 			Unit:     "mb",
 			TypeName: "gauge",
 		},
