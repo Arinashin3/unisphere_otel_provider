@@ -97,52 +97,33 @@ scrape:
 > > Attributes:: `N/A`  
 > > Value:: `float64`
 
-> **unisphere_capacity_total_capacity**  
-> Total capacity of unisphere capacity
+> **unisphere_capacity_used_capacity**  
+> Used capacity of unisphere capacity
 > > Unit:: `mb`  
 > > Type:: `gauge`  
 > > Attributes:: `N/A`  
 > > Value:: `float64`
 
-| Metric Name |     |
-|-------------|--------------------------------------|
-| Description | 
-| Unit        | mb                                   |
-| Type        | gauge                                |
-| Labels      | -                                    |
-| Value       | -                                  |
+> **unisphere_capacity_free_capacity**  
+> Free capacity of unisphere capacity
+> > Unit:: `mb`  
+> > Type:: `gauge`  
+> > Attributes:: `N/A`  
+> > Value:: `float64`
 
-| Metric Name | unisphere_capacity_used_capacity    |
-|-------------|-------------------------------------|
-| Description | Used capacity of unisphere capacity |
-| Unit        | mb                                  |
-| Type        | gauge                               |
-| Labels      | -                                   |
-| Value       | -                                  |
+> **unisphere_capacity_preallocated_capacity**  
+> pre-allocated capacity of unisphere capacity
+> > Unit:: `mb`  
+> > Type:: `gauge`  
+> > Attributes:: `N/A`  
+> > Value:: `float64`
 
-| Metric Name | unisphere_capacity_free_capacity    |
-|-------------|-------------------------------------|
-| Description | Free capacity of unisphere capacity |
-| Unit        | mb                                  |
-| Type        | gauge                               |
-| Labels      | -                                   |
-| Value       | -                                  |
-
-| Metric Name | unisphere_capacity_preallocated_capacity     |
-|-------------|----------------------------------------------|
-| Description | pre-allocated capacity of unisphere capacity |
-| Unit        | mb                                           |
-| Type        | gauge                                        |
-| Labels      | -                                            |
-| Value       | -                                  |
-
-| Metric Name | unisphere_capacity_total_provision               |
-|-------------|--------------------------------------------------|
-| Description | Total provisioned capacity of unisphere capacity |
-| Unit        | mb                                               |
-| Type        | gauge                                            |
-| Labels      | -                                                |
-| Value       | -                                  |
+> **unisphere_capacity_total_provision**  
+> Total provisioned capacity of unisphere capacity
+> > Unit:: `mb`  
+> > Type:: `gauge`  
+> > Attributes:: `N/A`  
+> > Value:: `float64`
 
 
 ### Disk
