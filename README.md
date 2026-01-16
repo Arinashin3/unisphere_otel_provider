@@ -3,6 +3,8 @@
 Unisphere OTEL Provider connects to the Unity console, scrape metric and logs.
 and send them to Backends like Prometheus, Loki...
 
+[Collectors](#Collectors)
+
 ## Collectors
 | Collector       | type     | Default Enabled | Description |
 |-----------------|----------|-----------------|-------------|
