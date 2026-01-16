@@ -81,24 +81,32 @@ scrape:
 ## Metric List
 ### Basic System Info
 > **unisphere_basic_system_info**  
-> Information about unisphere system
-
-| Metric Name | unisphere_basic_system_info        |
-|-------------|------------------------------------|
-| Description | Information about unisphere system |
-| Unit        | -                                  |
-| Type        | gauge                              |
-| Labels      | `model` `firmware.version`         |
-| Value       | 1                                  |
-
-
+> Information about unisphere system  
+> > Unit:: `N/A`  
+> > Type:: `gauge`  
+> > Attributes:: `model` `firmware.version`  
+> > Value:: 1
 
 ----------------
 
 ### Capacity
-| Metric Name | unisphere_capacity_total_capacity    |
+> **unisphere_capacity_total_capacity**  
+> Total capacity of unisphere capacity  
+> > Unit:: `mb`  
+> > Type:: `gauge`  
+> > Attributes:: `N/A`  
+> > Value:: `float64`
+
+> **unisphere_capacity_total_capacity**  
+> Total capacity of unisphere capacity
+> > Unit:: `mb`  
+> > Type:: `gauge`  
+> > Attributes:: `N/A`  
+> > Value:: `float64`
+
+| Metric Name |     |
 |-------------|--------------------------------------|
-| Description | Total capacity of unisphere capacity |
+| Description | 
 | Unit        | mb                                   |
 | Type        | gauge                                |
 | Labels      | -                                    |
