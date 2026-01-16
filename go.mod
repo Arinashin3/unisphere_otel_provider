@@ -1,4 +1,4 @@
-module unisphere_otel
+module unisphere_otel_provider
 
 go 1.25
 
