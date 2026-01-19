@@ -130,7 +130,7 @@ storage:
 | event           | `log`    |                 |                                                    |
 | host            | `metric` |                 |                                                    |
 | lun             | `metric` |                 |                                                    |
-| metric          | `metric`  |                 | query metric instant                               |
+| metric          | `metric` |                 | query metric instant                               |
 
 
 ## Metric List
