@@ -41,6 +41,9 @@ clients:
   - endpoint: https://<unisphere-address>
     auth: <authKey1>
     insecure: true
+    labels:
+      <labelKey1>: <labelValue1>  # Attach Extra labels...
+      <labelKey2>: <labelValue2>  # Attach Extra labels...
 
 auths:
   - name: <authKey1>
