@@ -16,7 +16,8 @@ and send them to Backends like Prometheus, Loki...
 ## Set up
 ### Case 1. Send to Backend directly
 
-Unisphere OTEL Provider Config (unisphere_otel_provider.yml)
+#### Unisphere OTEL Provider Config 
+(unisphere_otel_provider.yml)
 ```yaml
 global:
   client:
@@ -52,7 +53,7 @@ collectors:
       - "sp.*.physical.coreCount"
 ```
 
-Prometheus
+#### Prometheus
 1. Enable `--web.enable-otlp-receiver` feature in prometheus.
 2. In prometheus's config file `prometheus.yml` , set as below
 ```yaml
