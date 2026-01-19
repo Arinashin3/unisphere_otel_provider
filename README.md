@@ -55,7 +55,51 @@ collectors:
   metric:
     enabled: true
     paths:
+      # CPU
       - "sp.*.physical.coreCount"
+      - "sp.*.cpu.summary.busyTicks"
+      - "sp.*.cpu.summary.idleTicks"
+      - "sp.*.cpu.summary.waitTicks"
+
+      # Memory
+      - "sp.*.memory.summary.totalBytes"
+      - "sp.*.memory.summary.totalUsedBytes"
+      - "sp.*.memory.summary.cachedBytes"
+      - "sp.*.memory.summary.freeBytes"
+      - "sp.*.memory.summary.buffersBytes"
+
+      # Cache Memory
+      - "sp.*.memory.bufferCache.lookups"
+      - "sp.*.memory.bufferCache.hits"
+      - "sp.*.blockCache.global.summary.cleanPages"
+      - "sp.*.blockCache.global.summary.dirtyBytes"
+      - "sp.*.blockCache.global.summary.dirtyPages"
+      - "sp.*.blockCache.global.summary.flushedBlocks"
+      - "sp.*.blockCache.global.summary.flushes"
+
+      # Physical Disk
+      - "sp.*.physical.disk.*.readBlocks"
+      - "sp.*.physical.disk.*.writeBlocks"
+      - "sp.*.physical.disk.*.reads"
+      - "sp.*.physical.disk.*.writes"
+
+      # FibreChannel
+      - "sp.*.fibreChannel.fePort.*.readBlocks"
+      - "sp.*.fibreChannel.fePort.*.writeBlocks"
+      - "sp.*.fibreChannel.fePort.*.reads"
+      - "sp.*.fibreChannel.fePort.*.writes"
+
+      # Iscsi
+      - "sp.*.iscsi.fePort.*.readBlocks"
+      - "sp.*.iscsi.fePort.*.writeBlocks"
+      - "sp.*.iscsi.fePort.*.reads"
+      - "sp.*.iscsi.fePort.*.writes"
+
+      # Ethernet Port
+      - "sp.*.net.device.*.bytesIn"
+      - "sp.*.net.device.*.bytesOut"
+      - "sp.*.net.device.*.pktsIn"
+      - "sp.*.net.device.*.pktsOut"
 ```
 
 #### Prometheus
