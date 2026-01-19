@@ -39,8 +39,13 @@ server:
 
 clients:
   - endpoint: https://<unisphere-address>
-    auth: authKey
+    auth: <authKey1>
     insecure: true
+
+auths:
+  - name: <authKey1>
+    username: <unisphere-username>
+    password: <unisphere-password>
 
 collectors:
   basicSystemInfo:
