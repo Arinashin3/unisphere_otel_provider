@@ -56,9 +56,12 @@ Prometheus
 1. Enable `--web.enable-otlp-receiver` feature in prometheus.
 2. In prometheus's config file `prometheus.yml` , set as below
 ```yaml
-scrape:
+otlp:
+  promote_all_resource_attributes: true
 
-
+storage:
+  tsdb:
+    out_of_order_time_window: 30m
 ```
 
 ### Case 2. Use Opentelemetry-Collector Gateway
