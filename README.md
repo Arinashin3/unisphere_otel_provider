@@ -121,16 +121,16 @@ storage:
 ## Collector List
 | Collector       | type     | Default Enabled | Description                                        |
 |-----------------|----------|-----------------|----------------------------------------------------|
-| alert           | `log`    |                 | Scrape alerts and send to loki                     |
+| alert           | `log`    |                 | Scrape alerts Log                                  |
 | basicSystemInfo | `metric` |                 | Scrape system information(model, firmware version) |
 | capacity        | `metric` |                 | Scrape system's capacity                           |
 | disk            | `metric` |                 | Scrape Disk Health and size                        |
-| dpe             | `metric` |                 |                                                    |
-| ethernetPort    | `metric` |                 |                                                    |
-| event           | `log`    |                 |                                                    |
-| host            | `metric` |                 |                                                    |
-| lun             | `metric` |                 |                                                    |
-| metric          | `metric` |                 | query metric instant                               |
+| dpe             | `metric` |                 | Scrape DPE Health and Temperate                    |
+| ethernetPort    | `metric` |                 | Scrape Ethernet Port Health                        |
+| event           | `log`    |                 | Scrape Event Log                                   |
+| host            | `metric` |                 | Scrape Host's Information and Health               |
+| lun             | `metric` |                 | Scrape Lun's Information and Size                  |
+| metric          | `metric` |                 | query metric instant (using RealTimeQuery API)     |
 
 
 ## Metric List
