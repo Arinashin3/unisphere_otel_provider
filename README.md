@@ -4,7 +4,7 @@ Unisphere OTEL Provider connects to the Unity console, scrape metric and logs.
 and send them to Backends like Prometheus, Loki...
 
 
------------------
+
 ## Index
 
 - [Set up](#set-up)
@@ -12,7 +12,7 @@ and send them to Backends like Prometheus, Loki...
 - [Metric List](#metric-list)
   - [Basic System Info](#basic-system-info)
 
----------------
+
 ## Set up
 ### Case 1. Send to Backend directly
 
@@ -61,7 +61,7 @@ scrape:
 
 ### Case 2. Use Opentelemetry-Collector Gateway
 
--------------
+
 
 ## Collector List
 | Collector       | type     | Default Enabled | Description                                        |
