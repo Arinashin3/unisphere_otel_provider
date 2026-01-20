@@ -138,6 +138,16 @@ storage:
 
 ## Metric List
 ### Basic System Info
+Scrape Storage System's Version and model information  
+- API: `/api/types/basicSystemInfo/instances`
+
+#### Configuration Example
+
+```yaml
+collector:
+  basicSystemInfo:
+    enabled: true
+```
 > Metric Name:: **unisphere_basic_system_info**  
 > Description:: Information about unisphere system  
 > > Unit:: `N/A`  
