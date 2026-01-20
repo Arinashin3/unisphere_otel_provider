@@ -15,6 +15,7 @@ type UnityAction string
 
 const (
 	UnityBasicSystemInfo     UnityAction = "basicSystemInfo"
+	UnityStorageProcessor    UnityAction = "storageProcessor"
 	UnitySystemCapacity      UnityAction = "systemCapacity"
 	UnitySystem              UnityAction = "system"
 	UnityLun                 UnityAction = "lun"
