@@ -6,7 +6,6 @@ import (
 	"crypto/tls"
 	"encoding/json"
 	"errors"
-	"fmt"
 	"io"
 	"net"
 	"net/http"
@@ -160,7 +159,6 @@ func (_c *UnisphereClient) PostMetricRealTimeQuery(opt *api.UnityActionOptions, 
 
 	var qid string
 	qid = gjson.GetBytes(body, "content.id").String()
-	fmt.Println(qid)
 
 	return qid, nil
 }
