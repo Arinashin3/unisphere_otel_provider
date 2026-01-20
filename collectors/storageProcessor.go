@@ -60,6 +60,12 @@ func (_m *ModuleStorageProcessor) Init(key string) {
 	}
 	_m.opts = api.NewUnityActionOptions("storageProcessor")
 	_m.opts.Fields = []string{"model", "id"}
+	for _, m := range _m.desc {
+		if m.Key == "info" {
+			continue
+		}
+		_m.opts.Fields = append(_m.opts.Fields, m.Key)
+	}
 }
 
 func (_m *ModuleStorageProcessor) SetConfig(inf interface{}) Module {
